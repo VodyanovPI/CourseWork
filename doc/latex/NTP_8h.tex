@@ -1,0 +1,183 @@
+\hypertarget{NTP_8h}{}\section{Файл ntp/\+N\+TP.h}
+\label{NTP_8h}\index{ntp/NTP.h@{ntp/NTP.h}}
+
+
+Заголовочный файл для модуля \mbox{\hyperlink{classNTP}{N\+TP}}, выполняющего запрос к \mbox{\hyperlink{classNTP}{N\+TP}} серверу  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\subsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classNTP}{N\+TP}}
+\begin{DoxyCompactList}\small\item\em Класс для работы с \mbox{\hyperlink{classNTP}{N\+TP}} сервером, метод get\+\_\+time\+\_\+diff возвращает разность сетевого и системного времени, метод sync синхронизирует системное и сетевое время \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structntp__packet}{ntp\+\_\+packet}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classNTP}{N\+TP}} пакет \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{NTP_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}} \{ \mbox{\hyperlink{NTP_8h_a46c8a310cf4c094f8c80e1cb8dc1f911aa5d305f703cfce63b982a4cba74f64ec}{D\+I\+FF}}, 
+\mbox{\hyperlink{NTP_8h_a46c8a310cf4c094f8c80e1cb8dc1f911a447bfe7992c2fe70bfe561225f74d379}{S\+Y\+NC}}
+ \}
+\begin{DoxyCompactList}\small\item\em Перечисление режимов работы программы \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5}{Error}} \{ \newline
+\mbox{\hyperlink{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a6c9ee0fa90f09f791c2b50805b049ed3}{M\+O\+D\+E\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED}}, 
+\mbox{\hyperlink{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a78133ef4c58142603725186906664333}{N\+T\+P\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+A\+IL}}, 
+\mbox{\hyperlink{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a76488aa69691ad1929da6b59bcf5d31d}{S\+E\+T\+\_\+\+S\+Y\+S\+\_\+\+T\+I\+M\+E\+\_\+\+E\+R\+R\+OR}}, 
+\mbox{\hyperlink{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5acd1bc8fd363d9859665ff819afddb1d6}{G\+E\+T\+\_\+\+S\+Y\+S\+\_\+\+T\+I\+M\+E\+\_\+\+E\+R\+R\+OR}}, 
+\newline
+\mbox{\hyperlink{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5ad8d4e8b0e41222647ad1b740fe6deb4d}{S\+O\+C\+K\+E\+T\+\_\+\+E\+R\+R\+OR}}
+ \}
+\begin{DoxyCompactList}\small\item\em Перечисление возможных ошибок \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{NTP_8h_a9dbe44ba335cd83c4b99452274acc316}\label{NTP_8h_a9dbe44ba335cd83c4b99452274acc316}} 
+struct \mbox{\hyperlink{structntp__packet}{ntp\+\_\+packet}} {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} ((packed))
+\item 
+void \mbox{\hyperlink{NTP_8h_add0dcf488a1250abb84600e941fad86e}{ntp\+\_\+to\+\_\+ts}} (const uint64\+\_\+t t\+\_\+ntp, timespec $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Конвертирует метку времени из формата \mbox{\hyperlink{classNTP}{N\+TP}} в формат timespec. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{NTP_8h_a6d3d93dae52064539a0901fe5965695d}{ts\+\_\+to\+\_\+ntp}} (uint64\+\_\+t \&t\+\_\+ntp, const timespec $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Конвертирует метку времени из формата timespec в формат \mbox{\hyperlink{classNTP}{N\+TP}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{NTP_8h_aabe0a395e9116435cdc3a46dd4041a7f}\label{NTP_8h_aabe0a395e9116435cdc3a46dd4041a7f}} 
+uint8\+\_\+t \mbox{\hyperlink{NTP_8h_aabe0a395e9116435cdc3a46dd4041a7f}{li\+\_\+vn\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Список \mbox{\hyperlink{classNTP}{N\+TP}} серверов \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{NTP_8h_ae71c80c2fbedf798ce625595eea73ead}\label{NTP_8h_ae71c80c2fbedf798ce625595eea73ead}} 
+uint8\+\_\+t {\bfseries stratum}
+\item 
+\mbox{\Hypertarget{NTP_8h_a3d4af2e3e670d5099da7c12d26b0447c}\label{NTP_8h_a3d4af2e3e670d5099da7c12d26b0447c}} 
+uint8\+\_\+t {\bfseries poll}
+\item 
+\mbox{\Hypertarget{NTP_8h_ace557f86a8fd710ca0a257d7d47a3560}\label{NTP_8h_ace557f86a8fd710ca0a257d7d47a3560}} 
+uint8\+\_\+t {\bfseries precision}
+\item 
+\mbox{\Hypertarget{NTP_8h_a6a4de4b0943376f19def5d3717423b91}\label{NTP_8h_a6a4de4b0943376f19def5d3717423b91}} 
+uint32\+\_\+t {\bfseries root\+Delay}
+\item 
+\mbox{\Hypertarget{NTP_8h_a3600d39cac32e26fe0951a9a46416a68}\label{NTP_8h_a3600d39cac32e26fe0951a9a46416a68}} 
+uint32\+\_\+t {\bfseries root\+Dispersion}
+\item 
+\mbox{\Hypertarget{NTP_8h_a2a61cc13a28ef372a4fb44d3c43cd17e}\label{NTP_8h_a2a61cc13a28ef372a4fb44d3c43cd17e}} 
+uint32\+\_\+t {\bfseries ref\+Id}
+\item 
+\mbox{\Hypertarget{NTP_8h_aab99a87c020d82ba0155b47b06be98a3}\label{NTP_8h_aab99a87c020d82ba0155b47b06be98a3}} 
+uint64\+\_\+t \mbox{\hyperlink{NTP_8h_aab99a87c020d82ba0155b47b06be98a3}{ref\+Tm}}
+\begin{DoxyCompactList}\small\item\em Время обновления \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{NTP_8h_af7d176915d0defb5cb63e96cfd6fb96a}\label{NTP_8h_af7d176915d0defb5cb63e96cfd6fb96a}} 
+uint64\+\_\+t \mbox{\hyperlink{NTP_8h_af7d176915d0defb5cb63e96cfd6fb96a}{orig\+Tm}}
+\begin{DoxyCompactList}\small\item\em Начальное время \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{NTP_8h_a7d4911986a5dbb91ee83e8a523c81227}\label{NTP_8h_a7d4911986a5dbb91ee83e8a523c81227}} 
+uint64\+\_\+t \mbox{\hyperlink{NTP_8h_a7d4911986a5dbb91ee83e8a523c81227}{rx\+Tm}}
+\begin{DoxyCompactList}\small\item\em Время приёма \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{NTP_8h_a03e631c5d5993574aa5dab290d010f71}\label{NTP_8h_a03e631c5d5993574aa5dab290d010f71}} 
+uint64\+\_\+t \mbox{\hyperlink{NTP_8h_a03e631c5d5993574aa5dab290d010f71}{tx\+Tm}}
+\begin{DoxyCompactList}\small\item\em Время отправки \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Заголовочный файл для модуля \mbox{\hyperlink{classNTP}{N\+TP}}, выполняющего запрос к \mbox{\hyperlink{classNTP}{N\+TP}} серверу 
+
+\begin{DoxyAuthor}{Автор}
+В.\+О. Водянов 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Версия}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Дата}
+01.\+08.\+2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Авторство}
+ИБСТ ПГУ 
+\end{DoxyCopyright}
+
+
+\subsection{Перечисления}
+\mbox{\Hypertarget{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5}\label{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5}} 
+\index{NTP.h@{NTP.h}!Error@{Error}}
+\index{Error@{Error}!NTP.h@{NTP.h}}
+\subsubsection{\texorpdfstring{Error}{Error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5}{Error}}}
+
+
+
+Перечисление возможных ошибок 
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODE\_UNDEFINED@{MODE\_UNDEFINED}!NTP.h@{NTP.h}}\index{NTP.h@{NTP.h}!MODE\_UNDEFINED@{MODE\_UNDEFINED}}}\mbox{\Hypertarget{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a6c9ee0fa90f09f791c2b50805b049ed3}\label{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a6c9ee0fa90f09f791c2b50805b049ed3}} 
+M\+O\+D\+E\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED&Режим работы программы не определён \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NTP\_REQUEST\_FAIL@{NTP\_REQUEST\_FAIL}!NTP.h@{NTP.h}}\index{NTP.h@{NTP.h}!NTP\_REQUEST\_FAIL@{NTP\_REQUEST\_FAIL}}}\mbox{\Hypertarget{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a78133ef4c58142603725186906664333}\label{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a78133ef4c58142603725186906664333}} 
+N\+T\+P\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+F\+A\+IL&\mbox{\hyperlink{classNTP}{N\+TP}} запрос не удался \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SET\_SYS\_TIME\_ERROR@{SET\_SYS\_TIME\_ERROR}!NTP.h@{NTP.h}}\index{NTP.h@{NTP.h}!SET\_SYS\_TIME\_ERROR@{SET\_SYS\_TIME\_ERROR}}}\mbox{\Hypertarget{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a76488aa69691ad1929da6b59bcf5d31d}\label{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a76488aa69691ad1929da6b59bcf5d31d}} 
+S\+E\+T\+\_\+\+S\+Y\+S\+\_\+\+T\+I\+M\+E\+\_\+\+E\+R\+R\+OR&Ошибка при установке системного времени \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GET\_SYS\_TIME\_ERROR@{GET\_SYS\_TIME\_ERROR}!NTP.h@{NTP.h}}\index{NTP.h@{NTP.h}!GET\_SYS\_TIME\_ERROR@{GET\_SYS\_TIME\_ERROR}}}\mbox{\Hypertarget{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5acd1bc8fd363d9859665ff819afddb1d6}\label{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5acd1bc8fd363d9859665ff819afddb1d6}} 
+G\+E\+T\+\_\+\+S\+Y\+S\+\_\+\+T\+I\+M\+E\+\_\+\+E\+R\+R\+OR&Ошибка при получении системного времени \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SOCKET\_ERROR@{SOCKET\_ERROR}!NTP.h@{NTP.h}}\index{NTP.h@{NTP.h}!SOCKET\_ERROR@{SOCKET\_ERROR}}}\mbox{\Hypertarget{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5ad8d4e8b0e41222647ad1b740fe6deb4d}\label{NTP_8h_a2c3e4bb40f36b262a5214e2da2bca9c5ad8d4e8b0e41222647ad1b740fe6deb4d}} 
+S\+O\+C\+K\+E\+T\+\_\+\+E\+R\+R\+OR&Ошибка сокета \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{NTP_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}\label{NTP_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}} 
+\index{NTP.h@{NTP.h}!Mode@{Mode}}
+\index{Mode@{Mode}!NTP.h@{NTP.h}}
+\subsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{NTP_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}}}
+
+
+
+Перечисление режимов работы программы 
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIFF@{DIFF}!NTP.h@{NTP.h}}\index{NTP.h@{NTP.h}!DIFF@{DIFF}}}\mbox{\Hypertarget{NTP_8h_a46c8a310cf4c094f8c80e1cb8dc1f911aa5d305f703cfce63b982a4cba74f64ec}\label{NTP_8h_a46c8a310cf4c094f8c80e1cb8dc1f911aa5d305f703cfce63b982a4cba74f64ec}} 
+D\+I\+FF&Вывод разницы \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYNC@{SYNC}!NTP.h@{NTP.h}}\index{NTP.h@{NTP.h}!SYNC@{SYNC}}}\mbox{\Hypertarget{NTP_8h_a46c8a310cf4c094f8c80e1cb8dc1f911a447bfe7992c2fe70bfe561225f74d379}\label{NTP_8h_a46c8a310cf4c094f8c80e1cb8dc1f911a447bfe7992c2fe70bfe561225f74d379}} 
+S\+Y\+NC&Синхронизация \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Функции}
+\mbox{\Hypertarget{NTP_8h_add0dcf488a1250abb84600e941fad86e}\label{NTP_8h_add0dcf488a1250abb84600e941fad86e}} 
+\index{NTP.h@{NTP.h}!ntp\_to\_ts@{ntp\_to\_ts}}
+\index{ntp\_to\_ts@{ntp\_to\_ts}!NTP.h@{NTP.h}}
+\subsubsection{\texorpdfstring{ntp\_to\_ts()}{ntp\_to\_ts()}}
+{\footnotesize\ttfamily void ntp\+\_\+to\+\_\+ts (\begin{DoxyParamCaption}\item[{const uint64\+\_\+t}]{t\+\_\+ntp,  }\item[{timespec $\ast$}]{tp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конвертирует метку времени из формата \mbox{\hyperlink{classNTP}{N\+TP}} в формат timespec. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em t\+\_\+ntp} & \mbox{\hyperlink{classNTP}{N\+TP}} метка времени, tp указатель на структуру timespec \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{NTP_8h_a6d3d93dae52064539a0901fe5965695d}\label{NTP_8h_a6d3d93dae52064539a0901fe5965695d}} 
+\index{NTP.h@{NTP.h}!ts\_to\_ntp@{ts\_to\_ntp}}
+\index{ts\_to\_ntp@{ts\_to\_ntp}!NTP.h@{NTP.h}}
+\subsubsection{\texorpdfstring{ts\_to\_ntp()}{ts\_to\_ntp()}}
+{\footnotesize\ttfamily void ts\+\_\+to\+\_\+ntp (\begin{DoxyParamCaption}\item[{uint64\+\_\+t \&}]{t\+\_\+ntp,  }\item[{const timespec $\ast$}]{tp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конвертирует метку времени из формата timespec в формат \mbox{\hyperlink{classNTP}{N\+TP}}. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ out}}  & {\em t\+\_\+ntp} & \mbox{\hyperlink{classNTP}{N\+TP}} метка времени, tp указатель на структуру timespec \\
+\hline
+\end{DoxyParams}

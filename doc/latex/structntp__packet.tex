@@ -1,0 +1,55 @@
+\hypertarget{structntp__packet}{}\section{Структура ntp\+\_\+packet}
+\label{structntp__packet}\index{ntp\_packet@{ntp\_packet}}
+
+
+\mbox{\hyperlink{classNTP}{N\+TP}} пакет  
+
+
+
+
+{\ttfamily \#include $<$N\+T\+P.\+h$>$}
+
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structntp__packet_ab9adbefc25f3b23104483c1d4dd1f489}\label{structntp__packet_ab9adbefc25f3b23104483c1d4dd1f489}} 
+uint8\+\_\+t \mbox{\hyperlink{structntp__packet_ab9adbefc25f3b23104483c1d4dd1f489}{li\+\_\+vn\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Список \mbox{\hyperlink{classNTP}{N\+TP}} серверов \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structntp__packet_aa5ee6391aab0519b005cecd1369978a7}\label{structntp__packet_aa5ee6391aab0519b005cecd1369978a7}} 
+uint8\+\_\+t {\bfseries stratum}
+\item 
+\mbox{\Hypertarget{structntp__packet_a7d63926eabb30046753a30e34b1840a7}\label{structntp__packet_a7d63926eabb30046753a30e34b1840a7}} 
+uint8\+\_\+t {\bfseries poll}
+\item 
+\mbox{\Hypertarget{structntp__packet_aa438368f1f6eb68ce100be6f6bb2d623}\label{structntp__packet_aa438368f1f6eb68ce100be6f6bb2d623}} 
+uint8\+\_\+t {\bfseries precision}
+\item 
+\mbox{\Hypertarget{structntp__packet_ae77481785174459f9fa4213304f6a933}\label{structntp__packet_ae77481785174459f9fa4213304f6a933}} 
+uint32\+\_\+t {\bfseries root\+Delay}
+\item 
+\mbox{\Hypertarget{structntp__packet_a376f135ccdf41e3eb9eff55961c22fe3}\label{structntp__packet_a376f135ccdf41e3eb9eff55961c22fe3}} 
+uint32\+\_\+t {\bfseries root\+Dispersion}
+\item 
+\mbox{\Hypertarget{structntp__packet_a8360c7445ef179ab1144d4b236cb152a}\label{structntp__packet_a8360c7445ef179ab1144d4b236cb152a}} 
+uint32\+\_\+t {\bfseries ref\+Id}
+\item 
+\mbox{\Hypertarget{structntp__packet_a14e1f9d8c88659f372942fe7e016df75}\label{structntp__packet_a14e1f9d8c88659f372942fe7e016df75}} 
+uint64\+\_\+t \mbox{\hyperlink{structntp__packet_a14e1f9d8c88659f372942fe7e016df75}{ref\+Tm}}
+\begin{DoxyCompactList}\small\item\em Время обновления \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structntp__packet_aa6c139817877455661b10e09375a7f7b}\label{structntp__packet_aa6c139817877455661b10e09375a7f7b}} 
+uint64\+\_\+t \mbox{\hyperlink{structntp__packet_aa6c139817877455661b10e09375a7f7b}{orig\+Tm}}
+\begin{DoxyCompactList}\small\item\em Начальное время \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structntp__packet_a21f08d8faa296fa970c8dc67a82c3526}\label{structntp__packet_a21f08d8faa296fa970c8dc67a82c3526}} 
+uint64\+\_\+t \mbox{\hyperlink{structntp__packet_a21f08d8faa296fa970c8dc67a82c3526}{rx\+Tm}}
+\begin{DoxyCompactList}\small\item\em Время приёма \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structntp__packet_a206a3cd9d5dd05da7ce75d4e26e48fa3}\label{structntp__packet_a206a3cd9d5dd05da7ce75d4e26e48fa3}} 
+uint64\+\_\+t \mbox{\hyperlink{structntp__packet_a206a3cd9d5dd05da7ce75d4e26e48fa3}{tx\+Tm}}
+\begin{DoxyCompactList}\small\item\em Время отправки \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+\mbox{\hyperlink{classNTP}{N\+TP}} пакет 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+ntp/\mbox{\hyperlink{NTP_8h}{N\+T\+P.\+h}}\end{DoxyCompactItemize}

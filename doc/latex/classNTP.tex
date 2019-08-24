@@ -1,0 +1,193 @@
+\hypertarget{classNTP}{}\section{Класс N\+TP}
+\label{classNTP}\index{NTP@{NTP}}
+
+
+Класс для работы с \mbox{\hyperlink{classNTP}{N\+TP}} сервером, метод get\+\_\+time\+\_\+diff возвращает разность сетевого и системного времени, метод sync синхронизирует системное и сетевое время  
+
+
+
+
+{\ttfamily \#include $<$N\+T\+P.\+h$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNTP_ad652f28e14fe994f0389985c56f069ed}{N\+TP}} (const std\+::vector$<$ std\+::string $>$ \&serv\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Конструктор \end{DoxyCompactList}\item 
+time\+\_\+t \mbox{\hyperlink{classNTP_a5ac9726537b663175fe6487716efc4c7}{sync}} ()
+\begin{DoxyCompactList}\small\item\em Cинхронизирует системное и сетевое время \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classNTP_aadb62dc7f48a7fb76e1ec9d1784e657c}{get\+\_\+time\+\_\+diff}} ()
+\begin{DoxyCompactList}\small\item\em Получить разность сетевого и системного времени \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classNTP_af39e8a73dc451c84f20451df932abf82}{server\+\_\+connect}} (const std\+::string \&ntp\+\_\+serv)
+\begin{DoxyCompactList}\small\item\em Устанавливает соединение с \mbox{\hyperlink{classNTP}{N\+TP}} сервером \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classNTP_ab1a3d3f9d0edce03daadfe77a82a52e1}{send\+\_\+ntp\+\_\+pack}} ()
+\begin{DoxyCompactList}\small\item\em Отправляет \mbox{\hyperlink{classNTP}{N\+TP}} пакет на сервер,. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classNTP_ac04e08381f4a7522743a1f05e01e3d6b}{recv\+\_\+ntp\+\_\+pack}} (int64\+\_\+t \&t\+\_\+diff, bool set\+\_\+time\+\_\+flag, time\+\_\+t $\ast$new\+\_\+sys\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Принимает ответ от \mbox{\hyperlink{classNTP}{N\+TP}} сервер, если флаг set\+\_\+time\+\_\+flag установлен в true, устанавливает системное время, если указатель new\+\_\+sys\+\_\+time не нулевой, то по нему записывается новое системное время. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classNTP_a685ca56d2db2d35537d267b6e84ba594}{ntp\+\_\+request}} (int64\+\_\+t \&t\+\_\+diff, bool set\+\_\+time\+\_\+flag, time\+\_\+t $\ast$new\+\_\+sys\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Выполняет запрос к \mbox{\hyperlink{classNTP}{N\+TP}} серверу, если флаг set\+\_\+time\+\_\+flag установлен в true, устанавливает системное время, если указатель new\+\_\+sys\+\_\+time не нулевой, то по нему записывается новое системное время. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNTP_a2425b4fddbc7f0f1f8ce4f9903b3f9d4}\label{classNTP_a2425b4fddbc7f0f1f8ce4f9903b3f9d4}} 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classNTP_a2425b4fddbc7f0f1f8ce4f9903b3f9d4}{servers}}
+\begin{DoxyCompactList}\small\item\em Список \mbox{\hyperlink{classNTP}{N\+TP}} серверов \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNTP_ac85e51c850532aef16228baf21819492}\label{classNTP_ac85e51c850532aef16228baf21819492}} 
+int \mbox{\hyperlink{classNTP_ac85e51c850532aef16228baf21819492}{sock}}
+\begin{DoxyCompactList}\small\item\em дескриптор сокета \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс для работы с \mbox{\hyperlink{classNTP}{N\+TP}} сервером, метод get\+\_\+time\+\_\+diff возвращает разность сетевого и системного времени, метод sync синхронизирует системное и сетевое время 
+
+\begin{DoxyWarning}{Предупреждения}
+Системное и сетевое время не должны отличатся более чем не 34 года 
+\end{DoxyWarning}
+
+
+\subsection{Конструктор(ы)}
+\mbox{\Hypertarget{classNTP_ad652f28e14fe994f0389985c56f069ed}\label{classNTP_ad652f28e14fe994f0389985c56f069ed}} 
+\index{NTP@{NTP}!NTP@{NTP}}
+\index{NTP@{NTP}!NTP@{NTP}}
+\subsubsection{\texorpdfstring{NTP()}{NTP()}}
+{\footnotesize\ttfamily N\+T\+P\+::\+N\+TP (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{serv\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Конструктор 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em serv\+\_\+list} & список \mbox{\hyperlink{classNTP}{N\+TP}} серверов \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{classNTP_aadb62dc7f48a7fb76e1ec9d1784e657c}\label{classNTP_aadb62dc7f48a7fb76e1ec9d1784e657c}} 
+\index{NTP@{NTP}!get\_time\_diff@{get\_time\_diff}}
+\index{get\_time\_diff@{get\_time\_diff}!NTP@{NTP}}
+\subsubsection{\texorpdfstring{get\_time\_diff()}{get\_time\_diff()}}
+{\footnotesize\ttfamily int64\+\_\+t N\+T\+P\+::get\+\_\+time\+\_\+diff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Получить разность сетевого и системного времени 
+
+\begin{DoxyReturn}{Возвращает}
+разность сетевого и системного времени в 1/2$^\wedge$32 долях секунды 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Error,в} & случае ошибки \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classNTP_a685ca56d2db2d35537d267b6e84ba594}\label{classNTP_a685ca56d2db2d35537d267b6e84ba594}} 
+\index{NTP@{NTP}!ntp\_request@{ntp\_request}}
+\index{ntp\_request@{ntp\_request}!NTP@{NTP}}
+\subsubsection{\texorpdfstring{ntp\_request()}{ntp\_request()}}
+{\footnotesize\ttfamily bool N\+T\+P\+::ntp\+\_\+request (\begin{DoxyParamCaption}\item[{int64\+\_\+t \&}]{t\+\_\+diff,  }\item[{bool}]{set\+\_\+time\+\_\+flag,  }\item[{time\+\_\+t $\ast$}]{new\+\_\+sys\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Выполняет запрос к \mbox{\hyperlink{classNTP}{N\+TP}} серверу, если флаг set\+\_\+time\+\_\+flag установлен в true, устанавливает системное время, если указатель new\+\_\+sys\+\_\+time не нулевой, то по нему записывается новое системное время. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ out}}  & {\em t\+\_\+diff} & разность сетевого и системного времени, \mbox{[}in\mbox{]} set\+\_\+time\+\_\+flag флаг, new\+\_\+sys\+\_\+time указатель на время \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true в случае успеха, иначе false 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Error,в} & случае ошибки \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classNTP_ac04e08381f4a7522743a1f05e01e3d6b}\label{classNTP_ac04e08381f4a7522743a1f05e01e3d6b}} 
+\index{NTP@{NTP}!recv\_ntp\_pack@{recv\_ntp\_pack}}
+\index{recv\_ntp\_pack@{recv\_ntp\_pack}!NTP@{NTP}}
+\subsubsection{\texorpdfstring{recv\_ntp\_pack()}{recv\_ntp\_pack()}}
+{\footnotesize\ttfamily bool N\+T\+P\+::recv\+\_\+ntp\+\_\+pack (\begin{DoxyParamCaption}\item[{int64\+\_\+t \&}]{t\+\_\+diff,  }\item[{bool}]{set\+\_\+time\+\_\+flag,  }\item[{time\+\_\+t $\ast$}]{new\+\_\+sys\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Принимает ответ от \mbox{\hyperlink{classNTP}{N\+TP}} сервер, если флаг set\+\_\+time\+\_\+flag установлен в true, устанавливает системное время, если указатель new\+\_\+sys\+\_\+time не нулевой, то по нему записывается новое системное время. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ out}}  & {\em t\+\_\+diff} & разность сетевого и системного времени, \mbox{[}in\mbox{]} set\+\_\+time\+\_\+flag флаг, new\+\_\+sys\+\_\+time указатель на время \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true в случае успеха, иначе false 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Error,в} & случае ошибки \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classNTP_ab1a3d3f9d0edce03daadfe77a82a52e1}\label{classNTP_ab1a3d3f9d0edce03daadfe77a82a52e1}} 
+\index{NTP@{NTP}!send\_ntp\_pack@{send\_ntp\_pack}}
+\index{send\_ntp\_pack@{send\_ntp\_pack}!NTP@{NTP}}
+\subsubsection{\texorpdfstring{send\_ntp\_pack()}{send\_ntp\_pack()}}
+{\footnotesize\ttfamily bool N\+T\+P\+::send\+\_\+ntp\+\_\+pack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Отправляет \mbox{\hyperlink{classNTP}{N\+TP}} пакет на сервер,. 
+
+\begin{DoxyReturn}{Возвращает}
+true в случае успеха, иначе false 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Error,в} & случае ошибки \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classNTP_af39e8a73dc451c84f20451df932abf82}\label{classNTP_af39e8a73dc451c84f20451df932abf82}} 
+\index{NTP@{NTP}!server\_connect@{server\_connect}}
+\index{server\_connect@{server\_connect}!NTP@{NTP}}
+\subsubsection{\texorpdfstring{server\_connect()}{server\_connect()}}
+{\footnotesize\ttfamily bool N\+T\+P\+::server\+\_\+connect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ntp\+\_\+serv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Устанавливает соединение с \mbox{\hyperlink{classNTP}{N\+TP}} сервером 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em ntp\+\_\+serv} & имя или ip адресс \mbox{\hyperlink{classNTP}{N\+TP}} сервера \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true в случае успеха, иначе false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNTP_a5ac9726537b663175fe6487716efc4c7}\label{classNTP_a5ac9726537b663175fe6487716efc4c7}} 
+\index{NTP@{NTP}!sync@{sync}}
+\index{sync@{sync}!NTP@{NTP}}
+\subsubsection{\texorpdfstring{sync()}{sync()}}
+{\footnotesize\ttfamily time\+\_\+t N\+T\+P\+::sync (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cинхронизирует системное и сетевое время 
+
+\begin{DoxyReturn}{Возвращает}
+Новое системное время 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Error,в} & случае ошибки \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+ntp/\mbox{\hyperlink{NTP_8h}{N\+T\+P.\+h}}\item 
+ntp/\mbox{\hyperlink{NTP_8cpp}{N\+T\+P.\+cpp}}\end{DoxyCompactItemize}
