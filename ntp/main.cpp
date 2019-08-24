@@ -19,7 +19,7 @@
  * @code
  * ntp sync [ntp_server] ...
  * @endcode
- * @author Водянов
+ * @author В.О. Водянов
  * @version 0.1
  * @date 01.08.2019
  * @copyright ИБСТ ПГУ
