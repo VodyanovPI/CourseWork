@@ -46,32 +46,36 @@ private:
     int sock; //!< дескриптор сокета
     /**
      * @brief Устанавливает соединение с NTP сервером
-     * @param [in] ntp_serv имя или ip адресс NTP сервера
+     * @param[in] ntp_serv имя или ip адресс NTP сервера
      * @return true в случае успеха, иначе false
      */
     bool server_connect(const std::string &ntp_serv);
     /**
      * @brief Отправляет NTP пакет на сервер,
      * @return true в случае успеха, иначе false
-     * @throw Error, в случае ошибки
+     * @throw Error в случае ошибки
      */
     bool send_ntp_pack();
     /**
      * @brief Принимает ответ от NTP сервер,
      * если флаг set_time_flag установлен в true, устанавливает системное время,
      * если указатель new_sys_time не нулевой, то по нему записывается новое системное время. 
-     * @param [out] t_diff разность сетевого и системного времени, [in] set_time_flag флаг, new_sys_time указатель на время
+     * @param [out] t_diff разность сетевого и системного времени
+     * @param [in] set_time_flag флаг
+	 * @param new_sys_time указатель на время
      * @return true в случае успеха, иначе false
-     * @throw Error, в случае ошибки
+     * @throw Error в случае ошибки
      */
     bool recv_ntp_pack(int64_t &t_diff, bool set_time_flag, time_t *new_sys_time);
     /**
      * @brief Выполняет запрос к NTP серверу,
      * если флаг set_time_flag установлен в true, устанавливает системное время,
      * если указатель new_sys_time не нулевой, то по нему записывается новое системное время. 
-     * @param [out] t_diff разность сетевого и системного времени, [in] set_time_flag флаг, new_sys_time указатель на время
+     * @param [out] t_diff разность сетевого и системного времени
+     * @param [in] set_time_flag флаг
+     * @param new_sys_time указатель на время
      * @return true в случае успеха, иначе false
-     * @throw Error, в случае ошибки
+     * @throw Error в случае ошибки
      */
     bool ntp_request(int64_t &t_diff, bool set_time_flag, time_t *new_sys_time);
 public:
@@ -83,13 +87,13 @@ public:
     /**
      * @brief Cинхронизирует системное и сетевое время
      * @return Новое системное время
-     * @throw Error, в случае ошибки
+     * @throw Error в случае ошибки
      */
     time_t sync();
     /**
      * @brief Получить разность сетевого и системного времени
      * @return разность сетевого и системного времени в 1/2^32 долях секунды
-     * @throw Error, в случае ошибки
+     * @throw Error в случае ошибки
      */
     int64_t get_time_diff();
     ~NTP();
@@ -115,7 +119,8 @@ struct ntp_packet
 
 /**
  * @brief Конвертирует метку времени из формата NTP в формат timespec
- * @param [in] t_ntp NTP метка времени, tp указатель на структуру timespec
+ * @param [in] t_ntp NTP метка времени
+ * @param tp указатель на структуру timespec
  */
 inline void ntp_to_ts(const uint64_t t_ntp, timespec *tp)
 {
@@ -128,7 +133,8 @@ inline void ntp_to_ts(const uint64_t t_ntp, timespec *tp)
 
 /**
  * @brief Конвертирует метку времени из формата timespec в формат NTP
- * @param [out] t_ntp NTP метка времени, tp указатель на структуру timespec
+ * @param [out] t_ntp NTP метка времени
+ * @param tp указатель на структуру timespec
  */
 inline void ts_to_ntp(uint64_t &t_ntp, const timespec *tp)
 {
